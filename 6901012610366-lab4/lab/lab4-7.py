@@ -1,10 +1,18 @@
-amount = -1
-while amount != 0:
-    amount = int(input("Enter the amount you want to exchange (press 0 to exit): ")) 
-    print("คุณได้รับเหรียญ 10 บาท จำนวน", amount // 10, "เหรียญ")
-    amount = amount % 10
-    print("คุณได้รับเหรียญ 5 บาท จำนวน", amount // 5, "เหรียญ")
-    amount = amount % 5
-    print("คุณได้รับเหรียญ 1 บาท จำนวน", amount // 1, "เหรียญ")
-    amount = amount % 1
-    
+count = 0
+total_weight = 0.0
+
+while True:
+    weight = float(input("Please input Durian weight: "))
+    if weight == 0:
+        break
+    total_weight += weight
+    count += 1
+
+if count > 0:
+    average_weight = total_weight / count
+    if average_weight.is_integer():
+        average_weight = int(average_weight)
+    print(f"\nTotal of {count} Durians")
+    print(f"Average weight is {average_weight}")
+else:
+    print("\nNo durians recorded.")
